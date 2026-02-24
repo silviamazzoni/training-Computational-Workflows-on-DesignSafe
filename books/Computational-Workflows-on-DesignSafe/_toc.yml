@@ -1,0 +1,204 @@
+# Table of contents
+# Learn more at https:/jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+
+
+parts:
+  - caption: ""  # <- This part has no title, acts like a loose section
+    chapters:
+    - file: HOME.md
+      title: Computational Workflows on DS
+    - file: Docs_MD/Objectives.md
+      sections:
+      - file: Docs_MD/About.md
+      - file: Docs_MD/PreRequisites.md
+      - file: Docs_MD/TrainingMaterial.md
+    - file: Docs_MD/DocSeries.md
+      title: Document Series
+
+    
+  - caption: Computational Workflows
+    chapters:
+    - file: Docs_MD_Workflows/WorkflowSystems.md
+      sections:
+      - file: Docs_MD_Workflows/WorkflowDesign.md
+      - file: Docs_MD_Workflows/ComputationalWorkTypes.md
+      - file: Docs_MD_Workflows/WorkflowTypes.md
+    - file: Docs_MD_Workflows/WorkflowArchitecture.md
+    - file: Docs_MD_Workflows/ExecutionStrategies.md
+      sections:
+      - file: Docs_MD_Workflows/ExecutionStrategies_Matrix.md    
+    
+
+
+    
+  - caption: SLURM Jobs
+    chapters:
+    - file: Docs_MD_SLURM/README_SLURM.md
+    - file: Docs_MD_SLURM/SLURM_Run.md
+      sections:
+      - file: Docs_MD_SLURM/SLURM_Input.md
+      - file: Docs_MD_SLURM/SLURM_OutErrFiles.md
+    - file: Docs_MD_SLURM/SLURM_Workflow.md
+    - file: Docs_MD_SLURM/resources_and_runtime_in_SLURM.md
+      sections:
+      - file: Docs_MD_SLURM/execution_vs_login_node_in_SLURM.md
+    - file: Docs_MD_SLURM/SLURM_Scheduling.md
+    - file: Docs_MD_SLURM/MPIRanks.md
+    - file: Docs_MD_SLURM/PyLauncher.md
+      sections:
+      - file: Docs_MD_SLURM/PyLauncher_commonMistakes.md
+    - file: Docs_MD_SLURM/SLURM_JobArray_vs_Launcher.md
+      sections:
+      - file: Docs_MD_SLURM/SLURMmanual_ParameterSweep.md
+      - file: Docs_MD_SLURM/SLURMmanual_PythonDef_JobArray.md
+      - file: Docs_MD_SLURM/SLURMmanual_PythonDef_Launcher.md
+
+      
+    
+    
+    
+
+
+  - caption: Tapis    
+    chapters:
+    - file: Docs_MD_Tapis/job_automation.md
+    - file: Docs_MD_Tapis/tapis_intro.md
+    - file: Docs_MD_Tapis/tapis_interfacing.md
+    - file: Docs_MD_Tapis/tapis_jobs.md
+      sections:
+      - file: Docs_MD_Tapis/slurm_and_tapis.md
+      - file: Docs_MD_Tapis/tapis_SLURM_job.md
+
+
+    
+  - caption: Tapis Apps
+    chapters:    
+    - file: Docs_MD_TapisApps/tapis_apps.md
+      sections:
+      - file: Docs_MD_Tapis/tapis_glossary.md
+    - file: Docs_MD_TapisApps/tapis_app_types.md
+      sections:
+      - file: Docs_MD_TapisApps/tapis_app_types_FlowCharts.md
+      - file: Docs_MD_TapisApps/tapis_apptainer.md
+    - file: Docs_MD_TapisApps/tapis_app_submitProcess.md
+      sections:
+      - file: Docs_MD_TapisApps/tapis_job_execution_details.md
+    - file: Docs_MD_TapisApps/tapis_jobProfiling.md
+
+
+    - file: Docs_MD_TapisApps_Dev/Anatomy_TapisApp.md
+      sections:
+      - file: Docs_MD_TapisApps_Dev/appJson_schema.md
+        sections:
+        - file: Docs_MD_TapisApps_Dev/JobAttributes_vs_AppParams.md
+        - file: Docs_MD_TapisApps_Dev/appJson_profileJson.md
+
+
+      - file: Docs_MD_TapisApps_Dev/TapisJobFiles.md
+        sections:
+        - file: Docs_MD_TapisApps_Dev/TapisJobFiles_samples.md
+      - file: Docs_MD_TapisApps_Dev/SchedulerProfile.md
+        sections:
+        - file: Docs_MD_TapisApps_Dev/SchedulerProfile_vs_envVariables.md
+            
+            
+
+            
+    - file: Docs_MD_TapisApps_Dev/PublicAndCustomApps.md
+      sections:
+      
+      - file: Docs_MD_TapisApps_Dev/tapis_AppTemplates.md
+      - file: Docs_MD_TapisApps_Dev/MPIinTapisApps.md
+      - file: Docs_MD_TapisApps_Dev/Launchers.md
+      - file: Docs_MD_TapisApps_Dev/tapis_appsDev_BestPractice.md
+
+
+
+
+
+
+
+  - caption: DesignSafe Tapis Apps
+    chapters:    
+    - file: Docs_MD_TapisApps_DSapps/DSapps.md
+      sections:
+      - file: Docs_MD_TapisApps_DSapps/DSapps_OpenSees.md
+      - file: Docs_MD_TapisApps_DSapps/DSapps_OpenFOAM.md
+      - file: Docs_MD_TapisApps_DSapps/DSapps_ADCIRC.md
+      - file: Docs_MD_TapisApps_DSapps/DSapps_Compare.md
+            
+    - file: Docs_MD_TapisApps_DSapps/DSagnosticApp_README.md
+      sections:
+      - file: Docs_MD_TapisApps_DSapps/DSagnosticApp_Inputs.md
+        title: Inputs
+      - file: Docs_MD_TapisApps_DSapps/DSagnosticApp_QuickReference.md
+        title: Quick Reference
+      - file: Docs_MD_TapisApps_DSapps/DSagnosticApp_GUIDE.md
+        title: Guide
+        
+
+
+  - caption: Training Modules
+    chapters:
+    - file: Jupyter_Notebooks_Misc/PyLauncherTaskList.ipynb
+    - file: Jupyter_Notebooks_Misc/HDF5_Quick_Explorer.ipynb
+    - file: Docs_MD_Tapis/tapis_train_setup.md
+      sections:
+      - file: Jupyter_Notebooks_Tapis/tapisConnect_connectToTapis.ipynb
+      - file: Jupyter_Notebooks_Tapis/tapisConnect_getSystemSpecs.ipynb
+      - file: Jupyter_Notebooks_Tapis/tapisConnect_establishSystemCredentials.ipynb
+      - file: Jupyter_Notebooks_Tapis/tapisConnect_tapisPaths.ipynb
+
+        
+    - file: Docs_MD_Tapis/tapis_train_queryJobs.md
+      sections:
+      - file: Jupyter_Notebooks_Tapis/tapis_queryJobs_ExploreAllJobs.ipynb
+        sections:
+         - file: Jupyter_Notebooks_Tapis/tapis_getJobList_AllJobs.ipynb
+         - file: Jupyter_Notebooks_Tapis/tapis_getJobList_FilterJobs.ipynb
+        
+      - file: Jupyter_Notebooks_Tapis/tapis_queryJobs_InspectJob.ipynb
+        sections:
+         - file: Jupyter_Notebooks_Tapis/tapis_getJobMeta_JobStatus.ipynb
+         - file: Jupyter_Notebooks_Tapis/tapis_getJobMeta_JobMetaData.ipynb
+         - file: Jupyter_Notebooks_Tapis/tapis_getJobMeta_JobHistoryData.ipynb
+            
+              
+      - file: Jupyter_Notebooks_Tapis/tapis_queryJobs_RetrieveOutput.ipynb
+        sections:
+         - file: Jupyter_Notebooks_Tapis/tapis_getJobOutData_AccessData.ipynb
+         - file: Jupyter_Notebooks_Tapis/tapis_getJobOutData_OutputFiles_Metadata.ipynb
+         - file: Jupyter_Notebooks_Tapis/tapis_getJobOutData_OutputFiles_Download.ipynb
+         - file: Jupyter_Notebooks_Tapis/tapis_getJobList_ExploreJobsInteractive.ipynb
+    
+      - file: Docs_MD_Tapis/tapis_train_cancelJob.md
+
+
+    - file: Docs_MD_Tapis/tapis_apps_explore.md
+      sections:
+      - file: Jupyter_Notebooks_TapisApps/tapis_getApps_List.ipynb
+      - file: Jupyter_Notebooks_TapisApps/tapis_getApps_Schema.ipynb
+      - file: Jupyter_Notebooks_TapisApps/tapis_discoverApp_Designsafe_Agnostic_App.ipynb
+      
+    - file: Docs_MD_TapisApps_DSapps/DSagnosticApp_RUN.md
+      sections:
+      - file: Jupyter_Notebooks_AgnosticApp_MLexample/DS_Agnostic_App_Submit_MLExample.ipynb
+
+    - file: Docs_MD_TapisApps_Dev/appsDev_CustomTapisApp.md
+      sections:
+      - file: Jupyter_Notebooks_TapisAppsDev/custApp_opensees-mp-s3clone.ipynb
+        title: Clone opensees-mp-s3 app
+      - file: Jupyter_Notebooks_TapisAppsDev/custApp_DesignSafe-Agnostic_A_BuildApp.ipynb
+        title: designsafe-agnostic-app
+            
+  
+    
+  - caption: "TOC"
+    chapters:
+    - file: generated_toc.md    
+    - url: https://designsafe-ci.org/
+      title: DesignSafe Main Page
+

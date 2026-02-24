@@ -1,0 +1,211 @@
+/* -----------------------------------------------------------------------------
+   Silvia overrides (cleaned)
+   Notes:
+   - Removed stray nested comment opener at top.
+   - Grouped related rules + removed no-op blocks.
+   - Kept your intent, colors, and selectors.
+   -------------------------------------------------------------------------- */
+
+/* =========================
+   Prev/Next buttons (move to top-right)
+   ========================= */
+
+/* If you truly want the bottom footer hidden, keep this.
+   (If you want the footer visible AND also have a top copy, remove this.) */
+div.prev-next-footer {
+  display: none;
+}
+
+/* If your theme still renders the element, this positions it top-right */
+div.prev-next-footer {
+  position: fixed;
+  top: 0.21rem;
+  right: 0.21rem;
+  z-index: 1000;
+  background: pink;
+  padding: 0.3em 0.8em;
+  border-radius: 0.4em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* (This ::before wasn’t actually “cloning” anything; it just inserts an empty block.
+   Keeping it removed unless you had a specific spacing hack in mind.) */
+
+.prev-next-subtitle { font-size: 0.651rem; }
+.prev-next-title    { font-size: 0.751rem !important; }
+.prev-next-area a   { padding: 0; }
+
+/* =========================
+   Notebook cell styling
+   ========================= */
+
+div.cell_input.docutils.container {
+  background-color: pink !important;
+  border: 1px solid #000 !important;
+  border-left: 2px solid #000 !important;
+  border-radius: 0 !important;
+}
+
+div.cell_output {
+  border: 1px solid #000 !important;
+}
+
+div.cell_output.docutils.container {
+  border-radius: 0 !important;
+}
+
+/* Code blocks */
+pre {
+  background-color: #fff !important;
+  border: 1px solid #000 !important;
+}
+
+/* =========================
+   Sphinx-design (cards / dropdowns)
+   ========================= */
+
+.sd-summary-content {
+  background-color: #fff !important;
+}
+
+/* Dropdown spacing overrides */
+.sd-dropdown.sd-mb-3 {
+  margin-bottom: 3px !important;
+  box-shadow: 0 0 0 !important;
+  border-color: blue !important;
+}
+
+.sd-dropdown.sd-mb-3 + .sd-dropdown.sd-mb-3 {
+  margin-top: 0.25em !important;
+}
+
+/* Normal cards */
+.sd-card > .sd-card-header {
+  background-color: #e9e9e9 !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  border-color: blue !important;
+}
+
+/* Dropdown header (summary) */
+.sd-dropdown summary.sd-summary-title.sd-card-header {
+  background-color: #fff !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  border-color: blue !important;
+}
+
+.sd-dropdown[open] summary.sd-summary-title.sd-card-header {
+  background-color: #f5f5f5 !important;
+}
+
+/* =========================
+   Dropdown header (summary) — add border + subtle shadow
+   ========================= */
+
+/* Add a thin border + subtle shadow so white-on-white is visible */
+.sd-dropdown summary.sd-summary-title.sd-card-header {
+  background-color: #fff !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;  /* thin border all around */
+  border-left: 3px solid #4150B6 !important;         /* keep your thicker left cue */
+  border-radius: 6px !important;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Hover/focus makes it easier to see it's clickable */
+.sd-dropdown summary.sd-summary-title.sd-card-header:hover,
+.sd-dropdown summary.sd-summary-title.sd-card-header:focus {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Open state: slightly different fill + a touch stronger shadow */
+.sd-dropdown[open] summary.sd-summary-title.sd-card-header {
+  background-color: #f5f5f5 !important;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.14) !important;
+}
+
+/* Optional: give the entire dropdown a faint outline so the content block also reads */
+.sd-dropdown.sd-mb-3 {
+  border: 1px solid rgba(0, 0, 0, 0.10) !important;
+  border-radius: 6px !important;
+  overflow: hidden; /* keeps summary/content edges clean */
+}
+
+/* Optional: when open, lift the whole component a bit */
+.sd-dropdown.sd-mb-3[open] {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10) !important;
+}
+
+/* =========================
+   Sidebar (bd-links)
+   ========================= */
+
+nav.bd-links p.caption {
+  padding: 0;
+  margin: 0;
+}
+
+nav.bd-links li > a {
+  display: inline;
+}
+
+nav.bd-links ul ul {
+  padding: 0 0 0 0.75rem;
+}
+
+/* Hide JupyterLab widget panel if present */
+lm-Widget lm-Panel {
+  display: none;
+  height: 0;
+}
+
+/* =========================
+   Typography
+   ========================= */
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+.bd-article-container h2 {
+  color: #4150B6;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.bd-article-container h3 {
+  color: #4150B6;
+  font-size: 1.25rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.bd-article-container h4 {
+  color: #4150B6;
+  font-size: 1.125rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+/* =========================
+   Custom title helpers
+   ========================= */
+
+.titleSilvia {
+  font-weight: 700;
+  color: #4150B6;
+}
+
+.title2pt0 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4150B6;
+}
+
+.title1pt5 {
+  f

@@ -1,0 +1,5 @@
+openpyxl
+matplotlib
+numpy
+h5py
+mpi4py

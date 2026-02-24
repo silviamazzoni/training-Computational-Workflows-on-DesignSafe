@@ -1,0 +1,133 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+
+
+parts:
+
+  # - caption: ""  # <- This part has no title, acts like a loose section
+
+  #   chapters:
+  #   - file: Docs_MD/tapis_intro.md
+  #   - file: Docs_MD_TapisApps/Tapis_Glossary.md
+
+  #   - file: Docs_MD/tapis_jobs.md
+  #     sections:
+  #     - file: Docs_MD/TapisJob_FlowDiagram.md
+  #     - file: Docs_MD/Tapis_Job_Lifecycle_FlowChart.md
+
+  # - caption: Tapis Apps
+  #   chapters:      
+
+
+    
+  #   - file: Docs_MD_TapisApps/tapis_apps.md
+  #   - file: Docs_MD_TapisApps/tapis_appsProcess.md
+
+
+  #   - file: Docs_MD_TapisApps/Anatomy_TapisApp.md
+  #   - file: Docs_MD_TapisApps/Anatomy_TapisApp_Summary.md
+  #   - file: Docs_MD_TapisApps/tapis_app_workflow.md
+  #   - file: Docs_MD_TapisApps/tapis_app_workflow_summary.md
+  #   - file: Docs_MD_TapisApps/tapis_app_workflow_diagram.md
+
+
+  #   - file: Docs_MD_TapisApps/advancedTapis.md
+
+    
+  #   - file: Docs_MD_TapisApps/DSapps.md
+  #     sections:
+  #     - file: Docs_MD_TapisApps/DSapps_OpenSees.md
+  #     - file: Docs_MD_TapisApps/DSapps_OpenFOAM.md
+  #     - file: Docs_MD_TapisApps/DSapps_ADCIRC.md
+  #     - file: Docs_MD_TapisApps/DSapps_Compare.md
+  #   - file: Docs_MD_TapisApps/OpsApps_Overview.md
+  #     sections:
+  #     - file: Docs_MD_TapisApps/tapis_app_def_files.md
+
+      
+  #     - file: Docs_MD_TapisApps/OpsApps_Express.md
+  #       sections:
+  #       - file: Docs_MD_TapisApps/OpsApps_Express_fileStrux.md
+  #       - file: Docs_MD_TapisApps/OpsApps_Express_app_json.md
+  #       - file: Docs_MD_TapisApps/OpsApps_Express_app_sh.md
+  #       - file: Docs_MD_TapisApps/OpsApps_Express_example.md
+  #     - file: Docs_MD_TapisApps/OpsApps_MPs3.md
+  #       sections:
+  #       - file: Docs_MD_TapisApps/OpsApps_MPs3_fileStrux.md
+  #       - file: Docs_MD_TapisApps/OpsApps_MPs3_app_json.md
+  #       - file: Docs_MD_TapisApps/OpsApps_MPs3_profile_json.md
+  #       - file: Docs_MD_TapisApps/OpsApps_MPs3_tapisjob_app_sh.md
+  #   - file: Docs_MD/tapis_interfacing.md
+  #     sections:
+  #     - file: Docs_MD/tapis_interfacing_TapiPyExample.md.md
+
+
+  #   # - file: Docs_MD_TapisApps/SchedulerProfile.md
+  #   # - file: Docs_MD_TapisApps/SchedulerProfile_vs_envVariables.md
+  #   # - file: Docs_MD_TapisApps/JobAttributes_vs_AppParams.md
+
+
+  #   - file: Docs_MD_TapisApps/Tapis_App_BehindTheScenes_SSH.md
+  #   - file: Docs_MD_TapisApps/Tapis_App_BehindTheScenes_SSH_detailed.md
+
+
+  #   # - file: Docs_MD_TapisApps/bb_TapisApp_Runs_MPI_Job.md
+  #   - file: Docs_MD_TapisApps/bb_TapisV3_HPC_Job_Submission.md
+  #   - file: Docs_MD_TapisApps/bb_Tapis_Vs_Manual_Job_Execution.md
+  #   # - file: Docs_MD_TapisApps/cc_1_TapisApp_Types_Overview.md
+  #   # - file: Docs_MD_TapisApps/cc_2_apptainer.md
+  #   # - file: Docs_MD_TapisApps/cc_3_TapisApp_Types_FlowCharts.md
+  #   # - file: Docs_MD_TapisApps/scheduler_vs_script_launch_mpi.md
+  #   - file: Docs_MD_TapisApps/tapis_apps_explore.md
+  #   - file: Docs_MD_TapisApps/tapis_fileUpload.md
+
+
+      
+  - caption: Training Modules -- Tapis Setup
+    chapters:
+    - file: Docs_MD/tapis_setup.md
+      sections:
+      - file: Jupyter_Notebooks/tapisConnect_connectToTapis.ipynb
+      - file: Jupyter_Notebooks/tapisConnect_getSystemSpecs.ipynb
+      - file: Jupyter_Notebooks/tapisConnect_establishSystemCredentials.ipynb
+      - file: Jupyter_Notebooks/tapisConnect_tapisPaths.ipynb
+        
+    
+  - caption: Training Modules -- Query Jobs
+    chapters:        
+    
+    - file: Docs_MD/tapis_queryJobs.md
+    - file: Jupyter_Notebooks/tapis_queryJobs_ExploreAllJobs.ipynb
+      sections:
+      - file: Jupyter_Notebooks/tapis_getJobList_AllJobs.ipynb
+      - file: Jupyter_Notebooks/tapis_getJobList_FilterJobs.ipynb
+
+    - file: Jupyter_Notebooks/tapis_queryJobs_InspectJob.ipynb
+      sections:
+      - file: Jupyter_Notebooks/tapis_getJobMeta_JobStatus.ipynb
+      - file: Jupyter_Notebooks/tapis_getJobMeta_JobMetaData.ipynb
+      - file: Jupyter_Notebooks/tapis_getJobMeta_JobHistoryData.ipynb
+
+      
+    - file: Jupyter_Notebooks/tapis_queryJobs_RetrieveOutput.ipynb
+      sections:
+      - file: Jupyter_Notebooks/tapis_getJobOutData_AccessData.ipynb
+      - file: Jupyter_Notebooks/tapis_getJobOutData_OutputFiles_Metadata.ipynb
+      - file: Jupyter_Notebooks/tapis_getJobOutData_OutputFiles_Download.ipynb
+    - file: Jupyter_Notebooks/tapis_getJobList_ExploreJobsInteractive.ipynb
+    
+    - file: Docs_MD/tapis_cancelJob.md
+
+  - caption: Training Modules -- Using Tapis Apps
+    chapters:
+    - file: Jupyter_Notebooks_Apps/tapis_getApps_List.ipynb
+    - file: Jupyter_Notebooks_Apps/tapis_getApps_Schema.ipynb
+        
+    
+  # - caption: Utilities
+  #   chapters:
+  #   - file: generated_toc.md    
+

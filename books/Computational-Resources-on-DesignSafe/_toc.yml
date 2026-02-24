@@ -1,0 +1,113 @@
+# Table of contents
+# Learn more at https:/jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+
+
+parts:
+  - caption: ""  # <- This part has no title, acts like a loose section
+    chapters:
+    - file: HOME.md
+      title: Computational Resources on DS
+    - file: Docs_MD/Objectives.md
+      sections:
+      - file: Docs_MD/About.md
+      - file: Docs_MD/PreRequisites.md
+      - file: Docs_MD/TrainingMaterial.md
+    - file: Docs_MD/DocSeries.md
+      title: Document Series
+
+    
+              
+  - caption: Compute Environments
+    chapters:
+    - file: Docs_MD_CompResources/ComputeEnvironments.md
+    - file: Docs_MD_CompResources/CompEnv_FeatureComparison.md
+    - file: Docs_MD_CompResources/CompEnv_SelectionGuide.md
+              
+  - caption: Jupyter Hub
+    chapters:
+    - file: Docs_MD_CompResources/JupyterHub_Intro.md
+    - file: Docs_MD_CompResources/ComputeEnv_JupyterHubContainers.md    
+    - file: Docs_MD_CompResources/AccessJupyter.md
+    - file: Docs_MD_CompResources/JupyterHub_Workflow.md
+    - file: Docs_MD_CompResources/JupyterHub_Tools.md
+      sections:
+      - file: Docs_MD_CompResources/JupyterHub_Tools_Terminal.md
+      - file: Docs_MD_CompResources/JupyterHub_Tools_Console.md
+      - file: Docs_MD_CompResources/JupyterHub_Tools_Notebook.md
+      - file: Docs_MD_CompResources/JupyterHub_Tools_FileManager.md
+      - file: Docs_MD_CompResources/JupyterHub_Tools_Editor.md
+      - file: Docs_MD_CompResources/JupyterNotebooks.md
+      - file: Docs_MD_CompResources/PythonWithinPython.md  
+    
+  - caption: HPC Systems
+    chapters:
+    - file: Docs_MD_CompResources/ComputeEnv_HPC.md
+    - file: Docs_MD_CompResources/HPC_Intro.md
+      sections:
+      - file: Docs_MD_CompResources/HPC_Node.md
+      - file: Docs_MD_CompResources/HPC_NodeStampede3.md
+      - file: Docs_MD_CompResources/HPC_Core.md
+      - file: Docs_MD_CompResources/HPC_Queue.md
+        sections:
+        - file: Docs_MD_CompResources/HPC_QueueStampede3.md
+        - file: Docs_MD_CompResources/HPC_QueueSelexn.md
+    - file: Docs_MD_CompResources/HPC_allocations.md
+    - file: Docs_MD_CompResources/HPCenv_Access.md
+    - file: Docs_MD_CompResources/HPCenv_HPCjupyter.md
+    - file: Docs_MD_CompResources/HPC_manageResources.md
+
+            
+  - caption: VMs
+    chapters:
+    - file: Docs_MD_CompResources/ComputeEnv_VirtualMachines.md
+    
+
+
+
+    
+  - caption: File Storage
+    chapters:
+    - file: Docs_MD_FileStorage/FileStorage_a_Concepts.md
+    - file: Docs_MD_FileStorage/FileStorage_0_options.md
+      sections:
+      - file: Docs_MD_FileStorage/FileStorage_1_corral.md      
+      - file: Docs_MD_FileStorage/FileStorage_2_compsys.md      
+      - file: Docs_MD_FileStorage/FileStorage_3_compnode.md
+    - file: Docs_MD_FileStorage/FileStorage_c_Guide.md
+      sections:
+      - file: Docs_MD_FileStorage/FileStorage_b_PracticalUsage.md
+    - file: Docs_MD_FileStorage/WorkingWithPaths.md
+      sections:
+      - file: Docs_MD_FileStorage/Paths_inPython.md
+      - file: Docs_MD_FileStorage/Paths_inTapisApps.md
+    - file: Docs_MD_FileStorage/FilesystemsInHPCjobs.md
+    - file: Docs_MD_FileStorage/FileSharingInMPIjobs.md
+
+            
+
+
+
+
+
+    
+  - caption: Training Modules
+    chapters:
+    - file: JupyterNotebooks_CompResources/paths_StorageSystems.ipynb
+      sections:
+      - file: JupyterNotebooks_CompResources/paths_InPython.ipynb
+      - file: JupyterNotebooks_CompResources/paths_InPython_AbsVsRelative.ipynb
+      - file: JupyterNotebooks_CompResources/paths_InPython_RootAndHome.ipynb
+      - file: JupyterNotebooks_CompResources/paths_InPython_Manage.ipynb
+      - file: JupyterNotebooks_CompResources/paths_InPython_Contents.ipynb
+      - file: JupyterNotebooks_CompResources/paths_InPython_BuildPath.ipynb 
+
+
+
+  - caption: TOC
+    chapters:
+    - file: generated_toc.md    
+    - url: https://designsafe-ci.org/
+      title: DesignSafe Main Page

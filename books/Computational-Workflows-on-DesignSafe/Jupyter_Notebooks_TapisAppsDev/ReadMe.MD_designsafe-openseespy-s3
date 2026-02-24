@@ -1,0 +1,269 @@
+
+
+# designsafe-openseespy-s3
+***Basic App to run OpenSeesPy on stampede3.***
+
+
+* **Version:** 1.2.15
+* **Author:** *Silvia Mazzoni, DesignSafe (silviamazzoni@yahoo.com)*
+* **Date:** February 14, 2026
+* **Runtime:** ZIP
+* **Execution system:** Stampede3 (SLURM)
+
+---
+
+## 1. Overview
+
+**designsafe-openseespy-s3** is a lightweight, ZIP-runtime **Tapis batch app** designed to run **OpenSeesPy** workflows on **Stampede3** through the **DesignSafe** platform.
+
+The app intentionally keeps configuration minimal while still supporting:
+
+* Serial Python runs
+* MPI-based Python runs using `mpi4py`
+* Automatic staging of inputs and outputs
+* Optional module loading
+* Optional pip installs
+* Detailed job summary logging
+
+This app is ideal for:
+
+* Teaching and tutorials
+* Small–to–moderate OpenSeesPy models
+* Parameter studies
+* MPI-enabled OpenSeesPy workflows
+* Users who want **zero manual SLURM scripting**
+
+---
+
+## 2. What the App Does (Execution Flow)
+
+When a job starts, the app performs the following steps:
+
+1. **Stages the Input Directory** into the job working directory
+2. **Loads user-specified TACC modules** (via `MODULE_LOADS_LIST`)
+3. **Optionally installs Python packages** using pip
+4. **Copies the TACC-compiled OpenSeesPy library** (`OpenSeesPy.so`) into the working directory as:
+
+   ```
+   ./opensees.so
+   ```
+5. **Selects the launcher**
+
+   * Serial execution → direct `python3`
+   * MPI execution → `ibrun python3`
+6. **Runs your Python script**
+7. **Writes a compact, human-readable job summary log**
+8. **Cleans up temporary OpenSeesPy artifacts**
+9. **Archives outputs back to DesignSafe storage**
+
+No Docker image is used.
+All execution occurs directly on Stampede3 compute nodes under SLURM.
+
+---
+
+## 3. Required Input
+
+### **Input Directory (REQUIRED)**
+
+Upload a single directory containing:
+
+* Your **main OpenSeesPy script** (`.py`)
+* Any data files the script reads
+* Optional:
+
+  * `requirements.txt`
+  * auxiliary Python modules
+  * model input files
+
+The directory is staged and exposed as:
+
+```
+$PWD/inputDirectory/
+```
+
+Your script is executed **from inside this directory**.
+
+---
+
+## 4. App Arguments (Portal Inputs)
+
+### **1. Main Program**
+
+*Fixed and hidden*
+
+```
+python3
+```
+
+---
+
+### **2. Main Script (REQUIRED)**
+
+The **filename only** of your Python script
+(must exist inside the Input Directory)
+
+Example:
+
+```
+run_model.py
+```
+
+---
+
+### **3. UseMPI (True / False)**
+
+Controls how the script is launched.
+
+| UseMPI | Behavior                  |
+| ------ | ------------------------- |
+| False  | `python3 script.py`       |
+| True   | `ibrun python3 script.py` |
+
+**Guidance**
+
+* Use **True** when using:
+
+  * `mpi4py`
+  * OpenSeesPy MPI domain decomposition
+* Use **False** for:
+
+  * serial scripts
+  * `concurrent.futures` on a single node
+
+---
+
+## 5. Environment Variables (Pre-Configured)
+
+These variables are defined in the app and usually **do not need to be changed**.
+
+| Variable              | Default                                  | Purpose                                                |
+| --------------------- | ---------------------------------------- | ------------------------------------------------------ |
+| `GET_TACC_OPENSEESPY` | True                                     | Copies TACC-compiled OpenSeesPy into the job directory |
+| `MODULE_LOADS_LIST`   | `python/3.12.11,opensees,hdf5/1.14.4`    | Modules loaded before execution                        |
+| `PIP_INSTALLS_LIST`   | `mpi4py,pandas,numpy,matplotlib,futures` | Python packages installed via pip                      |
+
+You may override these values if needed.
+
+---
+
+## 6. Importing OpenSeesPy Correctly
+
+Because the app **injects a TACC-compiled shared library** into the working directory, your script must import OpenSeesPy as:
+
+```python
+import opensees as ops
+```
+
+or:
+
+```python
+import opensees
+```
+
+❌ **Do not** use:
+
+```python
+import openseespy.opensees
+```
+
+unless you intentionally install the PyPI wheel and disable `GET_TACC_OPENSEESPY`.
+
+---
+
+## 7. MPI Usage with OpenSeesPy
+
+For MPI workflows, your script should explicitly use `mpi4py`:
+
+```python
+from mpi4py import MPI
+import opensees as ops
+```
+
+Portal settings:
+
+* **UseMPI:** True
+* **nodeCount / coresPerNode:** set appropriately
+
+The app will automatically launch with:
+
+```
+ibrun python3 your_script.py
+```
+
+---
+
+## 8. Job Logging & Diagnostics
+
+Each job produces a **compact summary log** named:
+
+```
+SLURM-job-summary.log
+```
+
+This file includes:
+
+* App metadata
+* Loaded modules
+* Installed pip packages
+* Launch mode (MPI vs serial)
+* Runtime durations
+* Error diagnostics (if the job fails)
+
+This log is intended for **human-readable debugging** and complements SLURM output files.
+
+---
+
+## 9. Output & Archiving
+
+All files produced during execution remain inside the Input Directory and are archived to:
+
+```
+$WORK/tapis-jobs-archive/<date>/<jobname>-<jobuuid>/
+```
+
+Archived content includes:
+
+* Job summary log
+* Environment logs
+* Script outputs
+* Any files created by your Python workflow
+
+---
+
+## 10. Common Failure Modes
+
+| Symptom                 | Likely Cause                          |
+| ----------------------- | ------------------------------------- |
+| `ImportError: opensees` | Incorrect import statement            |
+| MPI job hangs           | `UseMPI=True` but script not MPI-safe |
+| pip install failure     | Incompatible package version          |
+| Job exits immediately   | Script filename mismatch              |
+
+Check **SLURM-job-summary.log** first.
+
+---
+
+## 11. Intended Scope
+
+This app is designed for:
+
+* OpenSeesPy-based research workflows
+* Education and training
+* Lightweight automation through the DesignSafe portal
+
+It is **not** intended to replace:
+
+* Custom SLURM scripts
+* Large-scale production pipelines
+* Long-running, multi-stage workflows
+
+For those use cases, consider developing a custom Tapis app or using OpenSeesMP-specific apps.
+
+---
+
+## 12. License & Reuse
+
+Developed by DesignSafe.
+This app may be reused, forked, and extended for broader OpenSeesPy workflows.
+
+

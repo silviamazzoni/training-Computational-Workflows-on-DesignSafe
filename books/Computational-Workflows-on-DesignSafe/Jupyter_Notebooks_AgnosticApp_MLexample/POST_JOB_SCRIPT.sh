@@ -1,0 +1,3 @@
+rm -rf Updated_NGA_West2_Flatfile_RotD50_d050_public_version.xlsx
+rm -rf NGAWest2_FilenamesAndMeta.csv
+rm -rf NGAWest2_TimeSeriesOnly_byRSN_AT2_260115.hdf5

@@ -1,0 +1,75 @@
+AttributeCat,Attribute,Type,Example,Notes
+Application,tenant,String,designsafe,Name of the tenant for which the application is defined. Must be unique in combination with id and version.
+Application,id,String,my-ds-app,Application name. URI safe. Required at creation. Must be unique with tenant and version.
+Application,version,String,0.0.1,Version of the application. URI safe. Required at creation. Must be unique with tenant and id.
+Application,description,String,A sample application,Optional description
+Application,owner,String,jdoe,Username of the app owner. Default is ${apiUserId}.
+Application,enabled,boolean,FALSE,Whether the app is currently enabled. Default is TRUE.
+Application,versionEnabled,boolean,FALSE,Whether this specific version is enabled. Default is TRUE.
+Application,locked,boolean,FALSE,Whether this version is locked. Locked apps cannot be updated.
+Application,runtime,enum,SINGULARITY,"Runtime used to execute the app. Options: DOCKER, SINGULARITY, ZIP. Default is DOCKER."
+Application,runtimeVersion,String,2.5.2,Optional runtime version or version range.
+Application,runtimeOptions,[enum],,"Options: NONE, SINGULARITY_START, SINGULARITY_RUN. Default is NONE. START is deprecated."
+Application,containerImage,String,docker.io/hello-world,Reference to the container image. Required at creation.
+Application,jobType,enum,BATCH,"Type of job. Options: BATCH, FORK. Default is FORK."
+Application,maxJobs,int,10,Max number of simultaneous jobs. Use -1 for unlimited. Default is unlimited.
+Application,maxJobsPerUser,int,2,Max number of jobs per user. Use -1 for unlimited.
+Application,strictFileInputs,boolean,FALSE,"If TRUE, jobs must use only named file inputs defined in the app."
+Application,jobAttributes,JobAttributes,,Additional job execution attributes. See jobAttributes section.
+Application,tags,[String],,Optional list of tags.
+Application,notes,String,"{""project"": ""myproj""}",Optional JSON metadata. Not used by Tapis.
+Application,uuid,UUID,20281,Auto-generated unique ID.
+Application,created,Timestamp,2020-06-19T15:10:43Z,Time the app was created. Maintained by service.
+Application,updated,Timestamp,2020-07-04T23:21:22Z,Time the app was last updated. Maintained by service.
+Job,description,String,,Job description; can include macros
+Job,execSystemId,String,,Target system for execution
+Job,execSystemExecDir,String,${JobWorkingDir}/jobs/...,Application's working directory
+Job,execSystemInputDir,String,${JobWorkingDir}/jobs/...,Where Tapis stages input
+Job,execSystemOutputDir,String,${JobWorkingDir}/jobs/...,Where output is written
+Job,dtnSystemInputDir,String,,Optional DTN input staging
+Job,dtnSystemOutputDir,String,,Optional DTN output archiving
+Job,execSystemLogicalQueue,String,normal,Queue name
+Job,archiveSystemId,String,,Archiving system
+Job,archiveSystemDir,String,${JobWorkingDir}/jobs/...,Archive directory
+Job,archiveOnAppError,boolean,TRUE,Archive even if app fails
+Job,isMpi,boolean,FALSE,Indicates MPI job
+Job,mpiCmd,String,"mpirun, ibrun -n 4",MPI command
+Job,cmdPrefix,String,,Command prefix if not MPI
+Job,parameterSet,ParameterSet,,"CLI args, env, filters. See below."
+Job,fileInputs,[FileInput],,Named file inputs
+Job,fileInputArrays,[FileInputArray],,File input arrays
+Job,nodeCount,int,,Nodes requested
+Job,coresPerNode,int,,Cores per node
+Job,memoryMB,int,,Memory in MB
+Job,maxMinutes,int,,Time limit in minutes
+Job,subscriptions,,,Notification subscriptions
+Job,tags_job,[String],,Tags
+Job,appArgs,[Arg],,Command-line args to app
+Job,containerArgs,[Arg],,Args to the container runtime
+Job,schedulerOptions,[Arg],,Options passed to batch scheduler
+Job,envVariables,[KeyValuePair],,Environment variables
+Job,archiveFilter,ArchiveFilter,,File archiving options
+ArchiveFilter,includes,[String],,Files to include
+ArchiveFilter,excludes,[String],,Files to exclude (takes precedence)
+ArchiveFilter,includeLaunchFiles,boolean,,Include Tapis-generated launch scripts (default TRUE)
+Arg,name,String,,Required at creation
+Arg,description,String,,Optional explanation
+Arg,inputMode,enum,,"Modes: REQUIRED, FIXED, INCLUDE_ON_DEMAND, INCLUDE_BY_DEFAULT"
+Arg,arg,String,,Required value
+Arg,notes,String,"{""fieldType"": ""int""}",Optional metadata
+KeyValuePair,key,String,INPUT_FILE,Required name
+KeyValuePair,value,String,/tmp/file.input,Value
+KeyValuePair,description,String,,Optional
+KeyValuePair,inputMode,enum,REQUIRED,As in Arg table
+KeyValuePair,notes,String,{},Metadata JSON
+FileInput,name,String,,Required name
+FileInput,description,String,,Optional
+FileInput,inputMode,enum,,"REQUIRED, OPTIONAL, FIXED (default: OPTIONAL)"
+FileInput,autoMountLocal,boolean,,Auto-mount local file paths (default TRUE)
+FileInput,sourceUrl,String,,Staging source
+FileInput,targetPath,String,,Destination path
+FileInputArray,name,String,,Required name
+FileInputArray,description,String,,Optional
+FileInputArray,inputMode,enum,,"REQUIRED, OPTIONAL, FIXED (default: OPTIONAL)"
+FileInputArray,sourceUrls,[String],,Array of sources
+FileInputArray,targetDir,String,,Target directory

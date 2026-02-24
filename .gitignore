@@ -1,0 +1,29 @@
+# Jupyter Book build output
+_build/
+**/_build/
+
+# Jupyter Book caches (optional but nice)
+**/.jupyter_cache/
+
+# Jupyter artifacts
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+**/_pycache__/
+*.pyc
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Ignore per-book copied configs (source lives in shared/)
+books/*/_config.yml
+
+# Editor backup files
+.~
+
+# don't push the workflow file
+jupyter-book.yml
+

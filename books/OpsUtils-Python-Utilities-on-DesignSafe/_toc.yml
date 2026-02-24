@@ -1,0 +1,77 @@
+# Table of contents
+# Learn more at https:/jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+
+
+parts:
+  - caption: ""  # <- This part has no title, acts like a loose section
+    chapters:
+    - file: HOME.md
+    - file: Docs_MD/DocSeries.md
+      title: Document Series
+        
+  - caption: Miscellaneous Utils # ""  # <- This part has no title, acts like a loose section
+    chapters:        
+    - file: Docs_MD_PythonUtils/Misc/OpsUtils_Misc.md
+          # sections:
+    - file: Docs_MD_PythonUtils/Misc/convert_tacc_time.md
+    - file: Docs_MD_PythonUtils/Misc/convert_time_unix.md
+    - file: Docs_MD_PythonUtils/Misc/display_images_in_xbox.md
+    - file: Docs_MD_PythonUtils/Misc/empty_folder.md
+    - file: Docs_MD_PythonUtils/Misc/flatten_dict.md
+    - file: Docs_MD_PythonUtils/Misc/generate_task_commands.md
+    - file: Docs_MD_PythonUtils/Misc/get_files_recursive.md
+    - file: Docs_MD_PythonUtils/Misc/get_now_unix.md
+    - file: Docs_MD_PythonUtils/Misc/h5_tree.md
+    - file: Docs_MD_PythonUtils/Misc/queryDF.md
+    - file: Docs_MD_PythonUtils/Misc/show_text_file_in_accordion.md
+    - file: Docs_MD_PythonUtils/Misc/show_video.md
+    - file: Docs_MD_PythonUtils/Misc/unix_to_tacc_time.md
+            
+  - caption: Tapis Utils # ""  # <- This part has no title, acts like a loose section
+    chapters:
+    - file: Docs_MD_PythonUtils/Tapis/OpsUtils_Tapis.md
+          # sections:
+    - file: Docs_MD_PythonUtils/Tapis/analyze_tacc_job_history.md
+    - file: Docs_MD_PythonUtils/Tapis/bump_app_version.md
+    - file: Docs_MD_PythonUtils/Tapis/cancel_tapis_job.md
+    - file: Docs_MD_PythonUtils/Tapis/connect_tapis.md
+    - file: Docs_MD_PythonUtils/Tapis/display_tapis_app_schema.md
+    - file: Docs_MD_PythonUtils/Tapis/establish_tms_credentials.md
+    - file: Docs_MD_PythonUtils/Tapis/explore_tapis_job.md
+    - file: Docs_MD_PythonUtils/Tapis/filter_tapis_jobs_df.md
+    - file: Docs_MD_PythonUtils/Tapis/find_work_path_path.md
+    - file: Docs_MD_PythonUtils/Tapis/find_work_path.md
+    - file: Docs_MD_PythonUtils/Tapis/get_latest_app_version.md
+    - file: Docs_MD_PythonUtils/Tapis/get_system_queues.md
+    - file: Docs_MD_PythonUtils/Tapis/get_tapis_app_schema.md
+    - file: Docs_MD_PythonUtils/Tapis/get_tapis_job_all_files.md
+    - file: Docs_MD_PythonUtils/Tapis/get_tapis_job_description.md
+    - file: Docs_MD_PythonUtils/Tapis/get_tapis_job_history_data.md
+    - file: Docs_MD_PythonUtils/Tapis/get_tapis_job_metadata.md
+    - file: Docs_MD_PythonUtils/Tapis/get_tapis_job_status.md
+    - file: Docs_MD_PythonUtils/Tapis/get_tapis_jobs_df.md
+    - file: Docs_MD_PythonUtils/Tapis/get_tapis_jobs.md
+    - file: Docs_MD_PythonUtils/Tapis/get_tapis_tenant_and_username.md
+    - file: Docs_MD_PythonUtils/Tapis/get_tapis_username.md
+    - file: Docs_MD_PythonUtils/Tapis/get_user_path_tapis_uri.md
+    - file: Docs_MD_PythonUtils/Tapis/get_user_work_tapis_uri.md
+    - file: Docs_MD_PythonUtils/Tapis/interactive_tapis_job_explorer.md
+    - file: Docs_MD_PythonUtils/Tapis/monitor_tapis_job.md
+    - file: Docs_MD_PythonUtils/Tapis/print_nested_tapisresult.md
+    - file: Docs_MD_PythonUtils/Tapis/revoke_tms_credentials.md
+    - file: Docs_MD_PythonUtils/Tapis/run_tapis_job.md
+    - file: Docs_MD_PythonUtils/Tapis/submit_tapis_job.md
+    - file: Docs_MD_PythonUtils/Tapis/validate_app_folder.md
+
+
+    
+  - caption: TOC 
+    chapters:
+    - file: generated_toc.md
+    - url: https://designsafe-ci.org/
+      title: DesignSafe Main Page
+          
+

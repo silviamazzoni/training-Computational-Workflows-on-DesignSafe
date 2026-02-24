@@ -1,0 +1,60 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+
+
+parts:
+
+  # - caption: ""  # <- This part has no title, acts like a loose section
+  #   chapters:
+    
+  - caption: Overview
+    chapters:
+    - file: Docs_MD/tapis_AppOptions.md
+    
+  - caption: Chapp
+    chapters:
+     
+    - file: Docs_MD/appsDev_CustomTapisApp.md
+
+    - file: Docs_MD/AgnosticApp.md
+    - file: Docs_MD/TapisRun_ComputeEnv.md
+    - file: Docs_MD/Requirements.md
+    - file: Docs_MD/tapis_AppTemp_InputVSParams.md
+    - file: Docs_MD/tapis_AppTemp_Inputs.md
+    - file: Docs_MD/tapis_AppTemp_Outputs.md
+    - file: Docs_MD/tapis_AppTemp_Parameters.md
+    - file: Docs_MD/tapis_AppTemp_Schema.md
+    - file: Docs_MD/tapis_AppTemp_Structure.md
+    - file: Docs_MD/tapis_AppTemplates.md
+    - file: Docs_MD/tapis_appsDev_AppInputCats.md
+    - file: Docs_MD/tapis_appsDev_BestPractice.md
+    - file: Docs_MD/tapis_appsDev_Jsons.md
+
+
+  - caption: Jupyter Notebooks
+    chapters:    
+    
+    - file: Jupyter_Notebooks/custApp_CreateVirtualEnv_OpenSeesPyPlus_a_Create.ipynb
+    - file: Jupyter_Notebooks/custApp_CreateVirtualEnv_a_Create.ipynb
+    - file: Jupyter_Notebooks/custApp_CreateVirtualEnv_b_Test.ipynb
+    - file: Jupyter_Notebooks/custApp_DesignSafe-Agnostic_full.ipynb
+    - file: Jupyter_Notebooks/custApp_DesignSafe-Agnostic_full_RUNonly.ipynb
+    - file: Jupyter_Notebooks/custApp_SchedulerProfile.ipynb
+    - file: Jupyter_Notebooks/custApp_SchedulerProfile_pylauncher.ipynb
+    - file: Jupyter_Notebooks/custApp_opsmps3copy.ipynb
+    - file: Jupyter_Notebooks/custApp_opsmps3copy_addOpsPy.ipynb
+    - file: Jupyter_Notebooks/tapis_appsDev_CustomApp_GetCredentials.ipynb
+    - file: Jupyter_Notebooks/tapis_appsDev_CustomApp_GetWorkPath.ipynb
+    - file: Jupyter_Notebooks/tapis_appsDev_CustomApp_GetWorkPath_withZipFile.ipynb
+    # - file: ../../shared/Jupyter_Notebooks/Tapis-on-DesignSafe_Apps/populateTasks.ipynb
+    # - file: ../../shared/Jupyter_Notebooks/Tapis-on-DesignSafe_Apps/tapis_getApps_List.ipynb
+    # - file: ../../shared/Jupyter_Notebooks/Tapis-on-DesignSafe_Apps/tapis_getApps_List_Play.ipynb
+    # - file: ../../shared/Jupyter_Notebooks/Tapis-on-DesignSafe_Apps/tapis_getApps_Schema.ipynb
+    - file: Jupyter_Notebooks/tapis_submitJob_DSapp_OpenSees_Discover_PyLauncher_PLAY.ipynb
+
+  # - caption: Table of Contents
+  #   chapters:
+  #   - file: Docs_MD/generated_toc.md

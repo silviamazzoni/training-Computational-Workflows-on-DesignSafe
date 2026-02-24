@@ -1,0 +1,145 @@
+# Table of contents
+# Learn more at https:/jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: README
+
+
+parts:
+  - caption: ""  # <- This part has no title, acts like a loose section
+    chapters:
+    - file: HOME.md
+      title: OpenSees on DesignSafe
+    - file: Docs_MD/Objectives.md
+      sections:
+      - file: Docs_MD/About.md
+      - file: Docs_MD/Prerequisites.md
+      - file: Docs_MD/TrainingMaterial.md
+    - file: Docs_MD/DocSeries.md
+      title: Document Series
+
+
+  - caption: Workflows
+    chapters:
+    - file: Docs_MD/Workflows_OpenSees.md
+    - file: Docs_MD/Workflows_Job.md
+    - file: Docs_MD/Workflows_Trainings.md
+    
+  - caption: OpenSees
+    chapters:
+    - file: Docs_MD/OpenSees_AndDesignSafe.md
+    - file: Docs_MD/Interpreters_Intro.md
+      sections:
+      - file: Docs_MD/Interpreters_Workflow.md
+    - file: Docs_MD/Interpreters_DecisionMatrix.md
+    - file: Docs_MD/Ops_CommandStrux.md
+      sections:
+      - file: Docs_MD/Ops_CommandStrux_1_ExecutableFile.md
+      - file: Docs_MD/Ops_CommandStrux_2_ScriptFile.md
+      - file: Docs_MD/Ops_CommandStrux_3_CommandLineArgs.md    
+    - file: Docs_MD/Ops_ParallelExec.md
+      sections:
+      - file: Docs_MD/Ops_ParallelExec_MPI.md
+      - file: Docs_MD/Ops_ParallelExec_Ibrun.md
+      - file: Docs_MD/Ops_ParallelExec_python.md
+    - file: Docs_MD/Ops_ExecGuide.md
+    
+  - caption: Computational Environments
+    chapters:
+    - file: Docs_MD/ComputeEnvironmentsForOps.md
+    - file: Docs_MD/ComputeEnv_JupyterHub.md
+    - file: Docs_MD/ComputeEnv_OpenSeesVM.md
+    - file: Docs_MD/ComputeEnv_HPC.md
+    - file: Docs_MD/ComputeEnv_Guide.md
+    - file: Docs_MD/RunOpsOnHPC.md
+    - file: Docs_MD/WebPortal_Overview.md
+
+
+  - caption: Jupyter Hub
+    chapters:
+    - file: Docs_MD/RunOpsInDS_JupyterHub_intro.md
+        
+    - file: Docs_MD/CLI.md
+      sections:
+      - file: Docs_MD/RunOpenSees_CLI_interactive.md
+      - file: Docs_MD/RunOpenSees_CLI_script.md
+    - file: Docs_MD/RunOpsInDS_Console.md
+    
+
+        
+        
+  - caption: OpenSees Apps
+    chapters:
+    - file: Docs_MD_Tapis/DSapps_Overview.md
+    - file: Docs_MD_Tapis/DSapps_OpenSees.md
+      title: OpenSees Apps
+      sections:
+      - file: Docs_MD_Tapis/DSapps_OpenSees_LegacyApps.md
+        title: Legacy Apps
+      - file: Docs_MD_Tapis/DSapps_OpenSees_AgnosticApp.md
+        title: The Agnostic App
+    - file: Docs_MD_Tapis/tapis_OpenSeesApps_input.md
+    - file: Docs_MD_Tapis/OpenSees_webPortal_app.md
+    - file: Docs_MD_Tapis/OpsApps_Express.md
+      sections:
+      - file: Docs_MD_Tapis/OpsApps_Express_fileStrux.md
+      - file: Docs_MD_Tapis/OpsApps_Express_app_json.md
+      - file: Docs_MD_Tapis/OpsApps_Express_app_sh.md
+      - file: Docs_MD_Tapis/OpsApps_Express_example.md
+    - file: Docs_MD_Tapis/OpsApps_MPs3.md
+      sections:
+      - file: Docs_MD_Tapis/OpsApps_MPs3_fileStrux.md
+      - file: Docs_MD_Tapis/OpsApps_MPs3_app_json.md
+      - file: Docs_MD_Tapis/OpsApps_MPs3_profile_json.md
+      - file: Docs_MD_Tapis/OpsApps_MPs3_tapisjob_app_sh.md
+    - file: Docs_MD_Tapis/tapisApp_readme_OpenSeesPy.md
+    - file: Docs_MD_Tapis/tapisApp_readme_AgnosticApp.md
+      
+
+  - caption: Trainings
+    chapters:
+    - file: Docs_MD/WebPortal_Overview_Workflow.md
+      sections:
+      - file: Docs_MD/WebPortal_1_CreateInput.md
+      - file: Docs_MD/WebPortal_2_SubmitJob_OpenSeesExpress.md
+      - file: Docs_MD/WebPortal_2_SubmitJob_OpenSeesMP.md
+      - file: Docs_MD/WebPortal_3_MonitorJob_OpenSeesExpress.md
+      - file: Docs_MD/WebPortal_3_MonitorJob_OpenSeesMP.md
+      - file: Jupyter_Notebooks_OpenSees/webPortal_4_PostProcess_OpenSeesExpress.ipynb
+      - file: Jupyter_Notebooks_OpenSees/webPortal_4_PostProcess_OpenSeesMP.ipynb
+      
+    - file: Jupyter_Notebooks_OpenSees/runOps_Ex1a.py.Canti2D.Push.ipynb
+    - file: Jupyter_Notebooks_OpenSees/runOps_RunAnyOpenSeesInPython.ipynb
+
+    - file: Docs_MD_Tapis/tapis_apps_explore.md
+      sections:
+      - file: Jupyter_Notebooks_TapisAppsOpenSees/tapis_discover_app_OSexpress.ipynb
+      - file: Jupyter_Notebooks_TapisAppsOpenSees/tapis_discover_app_OSmpS3.ipynb
+      - file: Jupyter_Notebooks_TapisAppsOpenSees/tapis_discoverApp_Designsafe_Agnostic_App.ipynb
+      
+    - file: Docs_MD_Tapis/runTapisApp.md
+      sections:
+      - file: Jupyter_Notebooks_TapisAppsOpenSees/tapis_submitJob_DSapp_OpenSees_Detailed.ipynb
+    - file: Jupyter_Notebooks_TapisAppsOpenSees/tapis_submitJob_DSapp_OpenSees_Compact_OpsExpress.ipynb
+      title: Run OpenSees-Express App
+    - file: Jupyter_Notebooks_TapisAppsOpenSees/tapis_submitJob_DSapp_OpenSees_Compact_OpsMP.ipynb
+      title: Run OpenSeesMP App
+      
+      
+    - file: Docs_MD_Tapis/OpenSeesPy_App_RUN.md
+      sections:
+      - file: Jupyter_Notebooks_TapisAppsOpenSees/DSOpenSeesPy_App_SUBMITjob.ipynb
+        title: Run OpenSeesPy App
+
+    - file: Docs_MD_Tapis/DSagnosticApp_OpenSees_RUN.md
+      sections:
+      - file: Jupyter_Notebooks_TapisAppsOpenSees/DSagnostic_App_anyOpenSees_SUBMITjob.ipynb
+        title: Run OpenSees on AgnosticApp
+
+  - caption: TOC 
+    chapters:
+    - file: generated_toc.md
+    - url: https://designsafe-ci.org/
+      title: DesignSafe Main Page
+
+ 

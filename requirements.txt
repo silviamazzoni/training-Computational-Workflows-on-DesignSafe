@@ -1,0 +1,5 @@
+Pygments
+jupyter-book
+matplotlib
+numpy
+OpenSeesPy
