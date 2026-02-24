@@ -1,0 +1,6 @@
+name: Build & Deploy Jupyter Book (Incomplete)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:

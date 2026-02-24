@@ -23,7 +23,3 @@ books/*/_config.yml
 
 # Editor backup files
 .~
-
-# don't push the workflow file
-jupyter-book.yml
-
